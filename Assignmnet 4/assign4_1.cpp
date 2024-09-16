@@ -48,7 +48,9 @@ class time{
     }
     void display()
     {
-        cout<<h<<":"<<m<<":"<<s<<endl;
+        cout<<"-------------------"<<endl;
+        cout<<h<<"Hr : "<<m<<"min : "<<s<<"sec"<<endl;
+        cout<<"--------------------"<<endl;
     }
 };
 int main()
@@ -68,14 +70,23 @@ int main()
         
 for(int i=0; i<5; i++)
 {
-
-
          tptr[i]->display();
 }
         // tptr[1]->display();
         // tptr[2]->display();
         // tptr[3]->display();
         // tptr[4]->display();
+
+    time t1;
+    t1.setHour(3);
+    t1.setMinutes(23);
+    t1.setSeconds(30);
+
+    t1.getHour();
+    t1.getMinutes();
+    t1.getSeconds();
+    t1.display();
+
 for(int i=0; i<5; i++)
 {
     delete tptr[i];
