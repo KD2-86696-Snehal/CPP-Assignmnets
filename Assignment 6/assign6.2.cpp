@@ -154,8 +154,6 @@ int main()
     SalesManager s1;
     s1.acceptsalesManager();
     s1.displaysalesManager();
-
-
 }
 
 
