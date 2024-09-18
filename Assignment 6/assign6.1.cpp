@@ -124,11 +124,13 @@ class Employee: public person{
 int main()
 {
 
-    person *ptr=new Employee;
+    // person *ptr=new Employee;
 
-    Employee *eptr=(Employee *)ptr;
+    // Employee *eptr=(Employee *)ptr;
     // eptr->acceptemp();
     // eptr->displayemp();
+
+    person *ptr=NULL;
     int choice;
     
     do{
@@ -141,11 +143,12 @@ int main()
         switch(choice)
         {
             case 1:
-                eptr->acceptemp();
+                 ptr=new Employee;
+                //eptr->acceptemp();
                 break;
 
             case 2:
-                eptr->displayemp();
+                //eptr->displayemp();
                 break;
 
             case 3:
@@ -156,11 +159,12 @@ int main()
                 break;
         }
 
-        // if(ptr!=NULL)
-        // {
-        //     Employee *eptr=(Employee *)ptr;
-        //     eptr->acceptemp();
-        // }
+        if(ptr!=NULL)
+         {
+            Employee *eptr=(Employee *)ptr;
+            eptr->acceptemp();
+            eptr->displayemp();
+         }
     }while(choice!=3);
 
     
