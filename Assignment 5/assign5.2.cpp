@@ -12,7 +12,7 @@ class student{
     string gender;
     const int roll_no;
     static int gener_rollno;
-    int mark[3];
+    double mark[3];
 
     public:
     student():roll_no(++gener_rollno)
@@ -25,7 +25,7 @@ class student{
         }
  
     }
-    student(string name, string gender)
+    student(string name, string gender):roll_no(++gener_rollno)
     {
         this->name=name;
         this->gender=gender;
@@ -49,12 +49,23 @@ class student{
         percentage();
     }
     void percentage(){
-        int per,sum=0;
+        double per,sum=0;
         for(int i=0; i<3; i++)
         {
+            //cout<<mark[i]<<endl;
             sum+=mark[i];
+           // cout<<sum<<endl;
         }
+       
         per=(sum/300)*100;
         cout<<per<<endl;
     }
 };
+int student :: gener_rollno=1;
+int main()
+{
+    student s1;
+    s1.acceptstudents();
+    s1.displaystud();
+    
+}
