@@ -178,7 +178,7 @@ int menu()
 
 int main()
 {
-    try{
+   
     // bank b1;
     // b1.acceptdet();
     // b1.displaydtls();
@@ -211,16 +211,24 @@ int main()
             break;
 
             case 2:
+             try{
             j=findaccount(arr);
             if(j!=-1){
             arr[j]->deposite();
             }
             else{
                 cout<<"Account not Found..."<<endl;
-            }
+            }}
+             catch(InsufficientFundsException e1)
+                {
+                    e1.display();
+                }
+
+            
             break;
 
             case 3:
+            try{
             j=findaccount(arr);
             if(j!=-1){
             arr[j]->withdraw();
@@ -228,6 +236,11 @@ int main()
              else{
                 cout<<"Account not Found..."<<endl;
             }
+            }
+            catch(InsufficientFundsException e)
+    {
+        e.display();
+    }
             break;
 
             case 4:
@@ -258,9 +271,6 @@ int main()
 
 
     
-    }
-    catch(InsufficientFundsException e)
-    {
-        e.display();
-    }
+    
+   
 }
